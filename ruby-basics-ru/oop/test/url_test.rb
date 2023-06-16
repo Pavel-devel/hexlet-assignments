@@ -17,7 +17,6 @@ class UrlTest < Minitest::Test
     assert { url.host == 'yandex.ru' }
 
     params = { key: 'value', key2: 'value2' }
-    #
     assert { url.query_params == params }
     assert { url.query_param(:key) == 'value' }
     assert { url.query_param(:key2, 'lala') == 'value2' }

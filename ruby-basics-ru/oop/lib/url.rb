@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'forwardable'
 require 'uri'
 # BEGIN
@@ -18,11 +19,15 @@ class Url
 
   def query_param(key, default = nil)
     params = query_params
-    params[:key] || default
+    params[key] || default
   end
 
   def ==(other)
-    query_params == other.query_params
+    other.is_a?(Url) &&
+      scheme == other.scheme &&
+      host == other.host &&
+      port == other.port &&
+      query_params == other.query_params
   end
 
   def <=>(other)
