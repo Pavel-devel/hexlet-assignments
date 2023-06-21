@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# BEGIN
 require 'date'
 
 module Model
@@ -56,4 +53,3 @@ module Model
     base.extend ClassMethods
   end
 end
-# END

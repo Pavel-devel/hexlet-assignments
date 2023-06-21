@@ -13,7 +13,8 @@ class PostTest < Minitest::Test
       published: true
     }
 
-    @expected_attributes = @attributes.merge(created_at: DateTime.parse(@attributes[:created_at]))
+    @expected_attributes = @attributes
+    .merge(created_at: DateTime.parse(@attributes[:created_at]))
   end
 
   def test_model_contains_attributes_on_initialize
